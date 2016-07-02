@@ -20,12 +20,11 @@ def run():
 
     pict_queue = Queue.Queue()
     grabber = frame_source.populate(pict_queue, 1)
+    accumulator = f.process_pict(pict_queue, show=True)  # Blocking call
 
-    processing = f.process_pict(pict_queue, show=True)  # Blocking call
-
-
-    grabber.join()
-    processing.join()
+    # Stop threads properly
+    grabber.join()  # Not compulsory
+    accumulator.join()
 
     frame_source.release()
 
