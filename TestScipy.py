@@ -26,8 +26,6 @@ F = FrameFusion(im)
 F.show()
 
 
-img =
-
 # Save image
 # misc.imsave('face.png', img)  # uses the Image module (PIL)
 

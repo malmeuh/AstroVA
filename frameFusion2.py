@@ -18,10 +18,10 @@ class FrameFusion:
         self.n_fused_frames = 0
 
         # Allocate buffer
-        self.last_frame = np.float32(frame_first) #last frame
-        self.eq_frame = np.float32(frame_first) #equalized frame
-        self.acc_frame = np.float32(frame_first) #Sum of all frames
-        self.display_frame = np.float32(frame_first) #Frame to display
+        self.last_frame = np.float32(frame_first)  # last frame
+        self.eq_frame = np.float32(frame_first)  # equalized frame
+        self.acc_frame = np.float32(frame_first)  # Sum of all frames
+        self.display_frame = np.float32(frame_first)  # Frame to display
 
     def show(self):
 
@@ -45,8 +45,8 @@ class FrameFusion:
         """
 #        cv2.equalizeHist(new_frame, self.eq_frame)        
         
-        cv2.accumulate(new_frame, self.acc_frame)  #Second argument must be a float
-        cv2.normalize(self.acc_frame, self.display_frame, 0., 255., cv2.NORM_MINMAX) #Normalize from 0 to 255
+        cv2.accumulate(new_frame, self.acc_frame)  # Second argument must be a float
+        cv2.normalize(self.acc_frame, self.display_frame, 0., 255., cv2.NORM_MINMAX)  # Normalize from 0 to 255
         
         # Update and return
         self.n_fused_frames += 1
