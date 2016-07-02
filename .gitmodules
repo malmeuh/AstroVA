@@ -1,3 +1,6 @@
 [submodule "pibundle"]
 	path = pibundle
 	url = https://github.com/blefaudeux/pibundle.git
+[submodule "pibundle_malmeuh"]
+	path = pibundle_malmeuh
+	url = https://github.com/malmeuh/pibundle.git
