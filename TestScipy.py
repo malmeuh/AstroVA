@@ -8,13 +8,28 @@ http://www.scipy-lectures.org/advanced/image_processing/
 """
 
 from scipy import misc
-import matplotlib.pyplot as plt
+from frameFusion2 import *
+from os import walk
+from PIL import Image
+import matplotlib.pyplot
 
-# Read image
-img = misc.imread('Images/PICT_20150310_214645.jpg')
+# Read images
+dir_pics = 'Images/'
+
+f = []
+for (dirpath, dirnames, filenames) in walk(dir_pics):
+    f.extend(filenames)
+
+#Initialize
+im = misc.imread(dir_pics+f[0])
+F = FrameFusion(im)
+F.show()
+
+
+img =
 
 # Save image
-misc.imsave('face.png', img)  # uses the Image module (PIL)
+# misc.imsave('face.png', img)  # uses the Image module (PIL)
 
 # Display image
 plt.imshow(img)
