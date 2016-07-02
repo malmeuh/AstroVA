@@ -1,0 +1,3 @@
+[submodule "pibundle"]
+	path = pibundle
+	url = https://github.com/blefaudeux/pibundle.git
